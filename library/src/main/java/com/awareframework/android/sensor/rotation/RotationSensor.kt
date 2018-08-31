@@ -155,6 +155,7 @@ class RotationSensor : AwareSensor(), SensorEventListener {
 
         val device = RotationDevice().apply {
             deviceId = CONFIG.deviceId
+            label = CONFIG.label
             timestamp = System.currentTimeMillis()
 
             maxRange = sensor.maximumRange
@@ -205,9 +206,9 @@ class RotationSensor : AwareSensor(), SensorEventListener {
         }
 
         val data = RotationData().apply {
-            timestamp = currentTime
             deviceId = CONFIG.deviceId
             label = CONFIG.label
+            timestamp = currentTime
 
             x = event.values[0]
             y = event.values[1]
